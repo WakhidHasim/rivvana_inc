@@ -13,17 +13,17 @@
     <link href="{{ asset('landing/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('landing/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-    @include('includes.style')
+    @include('layouts.style')
 </head>
 
 <body>
-    @include('includes.navbar')
+    @include('layouts.navbar')
 
     @yield('content')
 
-    @include('includes.footer')
+    @include('layouts.footer')
 
-    @include('includes.script')
+    @include('layouts.script')
 </body>
 
 </html>
