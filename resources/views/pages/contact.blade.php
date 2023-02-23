@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'About Us'])
+@extends('layouts.app', ['title' => 'Contacts Rivvana Inc.'])
 
 @section('content')
     <main id="main">

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     color: #444444;
 }
 
@@ -24,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -38,7 +38,7 @@ h6 {
     bottom: 0;
     z-index: 9999;
     overflow: hidden;
-    background: #16192C;
+    background: #16192c;
 }
 
 #preloader:before {
@@ -46,7 +46,7 @@ h6 {
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
-    border: 6px solid #16192C;
+    border: 6px solid #16192c;
     border-top-color: #fff;
     border-bottom-color: #fff;
     border-radius: 50%;
@@ -86,7 +86,7 @@ h6 {
     right: 15px;
     bottom: 15px;
     z-index: 996;
-    background: #16192C;
+    background: #16192c;
     width: 40px;
     height: 40px;
     border-radius: 50px;
@@ -100,7 +100,7 @@ h6 {
 }
 
 .back-to-top:hover {
-    background: #16192C;
+    background: #16192c;
     color: #fff;
 }
 
@@ -120,8 +120,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-    background: #16192C;
-
+    background: #16192c;
 }
 
 #header .logo {
@@ -187,7 +186,7 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a {
     color: #47b2e4;
 }
 
@@ -242,11 +241,11 @@ h6 {
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul li:hover > a {
     color: #47b2e4;
 }
 
-.navbar .dropdown:hover>ul {
+.navbar .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -258,7 +257,7 @@ h6 {
     visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover>ul {
+.navbar .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: 100%;
@@ -270,7 +269,7 @@ h6 {
         left: -90%;
     }
 
-    .navbar .dropdown .dropdown:hover>ul {
+    .navbar .dropdown .dropdown:hover > ul {
         left: -100%;
     }
 }
@@ -342,7 +341,7 @@ h6 {
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile li:hover > a {
     color: #47b2e4;
 }
 
@@ -378,11 +377,11 @@ h6 {
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
+.navbar-mobile .dropdown ul li:hover > a {
     color: #47b2e4;
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown > .dropdown-active {
     display: block;
 }
 
@@ -400,7 +399,7 @@ h6 {
 }
 
 #hero h1 {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 800;
     font-size: 80px;
@@ -414,7 +413,7 @@ h6 {
 }
 
 #hero h2 {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -523,7 +522,7 @@ section {
 .section-title h2 {
     margin-bottom: 20px;
     padding-bottom: 20px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -549,7 +548,7 @@ section {
     display: block;
     width: 100px;
     height: 3px;
-    background: #16192C;
+    background: #16192c;
     bottom: 0;
     left: calc(50% - 50px);
 }
@@ -604,7 +603,7 @@ section {
 }
 
 .about .content h3 {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     padding-left: 20px;
     font-weight: 700;
@@ -614,7 +613,7 @@ section {
 }
 
 .about .content h4 {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     padding-left: 20px;
     font-weight: 700;
@@ -632,7 +631,7 @@ section {
 .about .content p {
     text-align: justify;
     padding: 20px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -660,7 +659,7 @@ section {
     list-style: none;
 }
 
-.about .card-quote li+li {
+.about .card-quote li + li {
     margin-top: 15px;
 }
 
@@ -668,27 +667,27 @@ section {
     padding: 20px;
     background: #fff;
     border-radius: 4px;
-    background: linear-gradient(86.01deg, #16192C 25.4%, #222A60 86.63%);
+    background: linear-gradient(86.01deg, #16192c 25.4%, #222a60 86.63%);
     border-radius: 18px;
 }
 
 .about .card-quote h5 {
     text-align: justify;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 30px;
-    color: #E1E8FF;
+    color: #e1e8ff;
 }
 
 .about .card-quote h4 {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: italic;
     font-weight: 400;
     font-size: 18px;
     line-height: 30px;
-    color: #7895FF;
+    color: #7895ff;
 }
 
 .about .card-quote span {
@@ -731,7 +730,6 @@ section {
 }
 
 @media (max-width: 1024px) {
-
     .about .content,
     .about .card-quote {
         padding-left: 0;
@@ -790,7 +788,7 @@ section {
 .about-us .content p {
     text-align: justify;
     padding: 20px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -926,7 +924,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .caption {
-    background: #16192C;
+    background: #16192c;
     background-size: cover;
     padding: 50px 0;
     height: 50%;
@@ -944,7 +942,7 @@ section {
     color: #fff;
     padding: 50px 20px 0px 20px;
     text-align: right;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
 }
 
@@ -1232,7 +1230,10 @@ section {
     position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+    .portfolio-details-slider
+    .swiper-pagination
+    .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
     background-color: #fff;
@@ -1240,7 +1241,10 @@ section {
     border: 1px solid #47b2e4;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+    .portfolio-details-slider
+    .swiper-pagination
+    .swiper-pagination-bullet-active {
     background-color: #47b2e4;
 }
 
@@ -1263,7 +1267,7 @@ section {
     font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
     margin-top: 10px;
 }
 
@@ -1383,7 +1387,7 @@ section {
     color: #fff;
 }
 
-.team .member .social a+a {
+.team .member .social a + a {
     margin-left: 8px;
 }
 
@@ -1525,7 +1529,7 @@ section {
     list-style: none;
 }
 
-.faq .faq-list li+li {
+.faq .faq-list li + li {
     margin-top: 15px;
 }
 
@@ -1706,7 +1710,7 @@ section {
     font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
     margin-top: 25px;
 }
 
@@ -1768,7 +1772,7 @@ section {
     padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
     background: #47b2e4;
     border: 0;
     padding: 12px 34px;
@@ -1777,7 +1781,7 @@ section {
     border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
     background: #209dd8;
 }
 
@@ -1832,11 +1836,11 @@ section {
     font-size: 14px;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
     padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
     display: inline-block;
     padding-right: 10px;
     color: #4668a2;
@@ -1848,7 +1852,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
     font-size: 14px;
-    background: #16192C;
+    background: #16192c;
 }
 
 #footer .logo-footer {
