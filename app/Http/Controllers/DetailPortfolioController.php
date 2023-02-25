@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class DetailPortfolioController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -15,6 +14,6 @@ class DashboardController extends Controller
      */
     public function __invoke()
     {
-        return view('pages.admin.dashboard');
+        return view('pages.portfolio-detail');
     }
 }
