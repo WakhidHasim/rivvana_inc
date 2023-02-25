@@ -19,7 +19,6 @@
                     </li>
                 </ul>
             </div>
-
             <div class="row">
                 <div class="col-md">
                     <div class="card card-stats card-round">
@@ -85,25 +84,6 @@
                                     <div class="numbers width-full">
                                         <p class="card-category">Fisioterapis</p>
                                         <h4 class="card-title" id="count_fisioterapis">3</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-stats card-round">
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col-icon">
-                                    <div class="icon-big text-center icon-info bubble-shadow-small">
-                                        <i class="fas fa-first-aid"></i>
-                                    </div>
-                                </div>
-                                <div class="col col-stats ml-3 ml-sm-0">
-                                    <div class="numbers width-full">
-                                        <p class="card-category">Tindakan</p>
-                                        <h4 class="card-title" id="count_tindakan">5</h4>
                                     </div>
                                 </div>
                             </div>
