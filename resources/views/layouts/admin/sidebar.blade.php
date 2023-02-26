@@ -39,24 +39,32 @@
                 </div>
             </div>
             <ul class="nav nav-primary">
-                <li class="nav-item active">
-                    <a href="../demo1/index.html">
+                <li class="nav-item {{ request()->is('admin/dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('dashboard') }}">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
             </ul>
             <ul class="nav nav-primary">
-                <li class="nav-item">
-                    <a href="../demo1/index.html">
+                <li class="nav-item {{ request()->is('admin/categories') ? 'active' : '' }}">
+                    <a href="{{ route('categories.index') }}">
+                        <i class="fas fa-home"></i>
+                        <p>Categories</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-primary">
+                <li class="nav-item {{ request()->is('admin/services') ? 'active' : '' }}">
+                    <a href="{{ route('services.index') }}">
                         <i class="fas fa-home"></i>
                         <p>Services</p>
                     </a>
                 </li>
             </ul>
             <ul class="nav nav-primary">
-                <li class="nav-item">
-                    <a href="../demo1/index.html">
+                <li class="nav-item {{ request()->is('admin/portfolios') ? 'active' : '' }}">
+                    <a href="{{ route('portfolios.index') }}">
                         <i class="fas fa-home"></i>
                         <p>Portfolios</p>
                     </a>
