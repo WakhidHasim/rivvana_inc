@@ -43,9 +43,10 @@ class CategoryController extends Controller
     {
         $data = $request->all();
 
-        $category = PortfolioCategory::findOrFail($id);
-
-        $category->update([$data]);
+        $category = PortfolioCategory::where('id', $id)
+            ->update([
+                'category' => $data['category']
+                ]);
 
         return redirect()->route('categories.index');
     }
