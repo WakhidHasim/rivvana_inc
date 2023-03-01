@@ -24,16 +24,6 @@
                                     <span class="link-collapse">My Profile</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#edit">
-                                    <span class="link-collapse">Edit Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#settings">
-                                    <span class="link-collapse">Settings</span>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -47,18 +37,18 @@
                 </li>
             </ul>
             <ul class="nav nav-primary">
-                <li class="nav-item {{ request()->is('admin/categories') ? 'active' : '' }}">
-                    <a href="{{ route('categories.index') }}">
-                        <i class="fas fa-home"></i>
-                        <p>Categories</p>
-                    </a>
-                </li>
-            </ul>
-            <ul class="nav nav-primary">
                 <li class="nav-item {{ request()->is('admin/services') ? 'active' : '' }}">
                     <a href="{{ route('services.index') }}">
                         <i class="fas fa-home"></i>
                         <p>Services</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-primary">
+                <li class="nav-item {{ request()->is('admin/categories') ? 'active' : '' }}">
+                    <a href="{{ route('categories.index') }}">
+                        <i class="fas fa-home"></i>
+                        <p>Categories</p>
                     </a>
                 </li>
             </ul>

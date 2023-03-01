@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('facebook');
             $table->string('twitter');
             $table->string('linkedin');
-            $table->softDeletes();
             $table->timestamps();
         });
     }

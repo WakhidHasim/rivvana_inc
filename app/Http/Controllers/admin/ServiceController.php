@@ -7,14 +7,11 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('pages.admin.service');
+        $services = Portfolio::orderBy('id', 'DESC')->get();
+
+        return view('pages.admin.service', compact('services'));
     }
 
     /**

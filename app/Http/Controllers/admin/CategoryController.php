@@ -43,24 +43,18 @@ class CategoryController extends Controller
     {
         $data = $request->all();
 
-        $category = PortfolioCategory::findOrFail($id);
-
-        $category->update([$data]);
+        PortfolioCategory::where('id', $id)
+            ->update([
+                'category' => $data['category']
+            ]);
 
         return redirect()->route('categories.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        $category = PortfolioCategory::findOrFail($id);
-
-        $category->delete();
+        PortfolioCategory::where('id', $id)
+            ->delete();
 
         return redirect()->route('categories.index');
     }

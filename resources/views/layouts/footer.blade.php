@@ -30,7 +30,7 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Website and App Development</a>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Website Development</a>
                         </li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Mobile Development</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">IOT Development (Internet Of
@@ -54,8 +54,8 @@
         </div>
     </div>
 
-    <div class="container footer-bottom clearfix">
-        <div class="copyright">
+    <div class="container-fluid footer-bottom clearfix">
+        <div class="copyright mx-auto">
             &copy; 2023 Copyright <strong><span>Rivvana Inc.</span></strong> All Rights Reserved
         </div>
     </div>

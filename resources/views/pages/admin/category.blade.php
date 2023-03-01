@@ -117,7 +117,7 @@
             <div class="modal-dialog" role="document">
                 <form action="{{ route('categories.update', $category->id) }}" method="POST">
                     @csrf
-                    @method('PATCH')
+                    @method('PUT')
                     <div class="modal-content">
                         <div class="modal-header no-bd">
                             <h5 class="modal-title">
@@ -140,7 +140,6 @@
                             </div>
                         </div>
                         <div class="modal-footer no-bd">
-                            <input type="hidden" value="{{ $category->id }}" name="id">
                             <button type="submit" class="btn btn-primary">Edit</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
@@ -172,7 +171,6 @@
                             <h5>Apakah Anda Yakin Ingin Menghapus Produk {{ $category->category }} ?</h5>
                         </div>
                         <div class="modal-footer no-bd">
-                            <input type="hidden" value="{{ $category->id }}" name="id">
                             <button type="submit" class="btn btn-primary">Delete</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>

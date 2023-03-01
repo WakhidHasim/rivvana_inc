@@ -13,8 +13,7 @@ class DashboardController extends Controller
     {
         return view('pages.admin.dashboard', [
             'portfolios' => Portfolio::count(),
-            'services' => Service::count(),
-            'categories' => PortfolioCategory::count()
+            'services' => Service::count()
         ]);
     }
 }

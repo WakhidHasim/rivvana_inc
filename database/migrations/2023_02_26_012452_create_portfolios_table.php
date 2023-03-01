@@ -24,7 +24,6 @@ return new class extends Migration
             $table->text('thumbnail');
             $table->text('image1');
             $table->text('image2');
-            $table->softDeletes();
             $table->timestamps();
         });
     }

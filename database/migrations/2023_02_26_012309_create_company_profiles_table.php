@@ -23,7 +23,6 @@ return new class extends Migration
             $table->text('description');
             $table->text('vision');
             $table->text('mission');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
