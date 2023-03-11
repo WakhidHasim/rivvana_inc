@@ -1,11 +1,15 @@
-@extends('layouts.app', ['title' => ' Detail Portfolio Rivvana Inc.'])
+@extends('layouts.app', ['title' => ' Detail Portfolio'])
 
 @section('content')
     <main id="main">
         <!-- ======= Breadcrumbs ======= -->
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
-                <h2>Portfolio Details</h2>
+                <ol>
+                    <li><a href="{{ route('portfolios') }}">Portolios</a></li>
+                    <li>Portfolio Details</li>
+                </ol>
+                <h2>{{ $portfolio->name }}</h2>
             </div>
         </section>
         <!-- End Breadcrumbs -->
@@ -18,15 +22,15 @@
                         <div class="portfolio-details-slider swiper">
                             <div class="swiper-wrapper align-items-center">
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('landing/img/portfolio/portfolio-1.jpg') }}" alt="" />
+                                    <img src="{{ asset('/storage/portfolios/' . $portfolio->slider1) }}" alt="" />
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('landing/img/portfolio/portfolio-2.jpg') }}" alt="" />
+                                    <img src="{{ asset('/storage/portfolios/' . $portfolio->slider2) }}" alt="" />
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('landing/img/portfolio/portfolio-3.jpg') }}" alt="" />
+                                    <img src="{{ asset('/storage/portfolios/' . $portfolio->slider3) }}" alt="" />
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
@@ -38,32 +42,17 @@
                             <h3>Project information</h3>
                             <ul>
                                 <li>
-                                    <strong>Category</strong>: Web design
+                                    <strong>Category</strong>: {{ $portfolio->service->name }}
                                 </li>
                                 <li>
-                                    <strong>Client</strong>: ASU Company
-                                </li>
-                                <li>
-                                    <strong>Project date</strong>: 01 March,
-                                    2020
-                                </li>
-                                <li>
-                                    <strong>Project URL</strong>:
-                                    <a href="#">www.example.com</a>
+                                    <strong>Client</strong>: {{ $portfolio->client }}
                                 </li>
                             </ul>
                         </div>
                         <div class="portfolio-description">
-                            <h2>This is an example of portfolio detail</h2>
+                            <h2>{{ $portfolio->name }}</h2>
                             <p>
-                                Autem ipsum nam porro corporis rerum. Quis
-                                eos dolorem eos itaque inventore commodi
-                                labore quia quia. Exercitationem repudiandae
-                                officiis neque suscipit non officia eaque
-                                itaque enim. Voluptatem officia accusantium
-                                nesciunt est omnis tempora consectetur
-                                dignissimos. Sequi nulla at esse enim cum
-                                deserunt eius.
+                                {!! $portfolio->description !!}
                             </p>
                         </div>
                     </div>

@@ -15,15 +15,14 @@ return new class extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('portfolio_category_id')->constrained('portfolio_categories')->onDelete('cascade');
+            $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
             $table->string('name');
             $table->string('slug');
             $table->string('client');
-            $table->date('project_date');
             $table->text('description');
-            $table->text('thumbnail');
-            $table->text('image1');
-            $table->text('image2');
+            $table->text('slider1');
+            $table->text('slider2');
+            $table->text('slider3');
             $table->timestamps();
         });
     }

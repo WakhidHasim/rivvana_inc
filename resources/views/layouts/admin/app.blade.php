@@ -7,10 +7,10 @@
     <title>{{ $title }}</title>
 
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="{{ asset('admin/assets/img/icon.ico') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('admin/img/icon.ico') }}" type="image/x-icon" />
 
     <!-- Fonts and icons -->
-    <script src="{{ asset('admin/assets/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>
         WebFont.load({
             google: {
@@ -20,7 +20,7 @@
                 "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands",
                     "simple-line-icons"
                 ],
-                urls: [`{{ asset('admin/assets/css/fonts.min.css') }}`]
+                urls: [`{{ asset('admin/css/fonts.min.css') }}`]
             },
             active: function() {
                 sessionStorage.fonts = true;
@@ -28,7 +28,11 @@
         });
     </script>
 
+    @stack('prepend-style')
+
     @include('layouts.admin.style')
+
+    @stack('addon-style')
 </head>
 
 <body>
@@ -43,7 +47,12 @@
             @include('layouts.admin.footer')
         </div>
     </div>
+
+    @stack('prepend-script')
+
     @include('layouts.admin.script')
+
+    @stack('addon-script')
 </body>
 
 </html>

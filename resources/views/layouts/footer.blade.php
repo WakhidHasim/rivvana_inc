@@ -7,36 +7,33 @@
                     <a href="index.html" class="logo me-auto"><img src="{{ asset('landing/img/logo.png') }}" alt=""
                             class="img-fluid logo-footer">
                     </a>
-                    <p>
-                        A108 Adam Street <br>
-                        New York, NY 535022<br>
-                        United States <br><br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
-                    </p>
+                    @foreach ($profiles as $profile)
+                        <p>
+                            {{ $profile->address }}
+                            <br>
+                            <strong>Phone : </strong>{{ $profile->phone }}<br>
+                            <strong>Email : </strong>{{ $profile->email }}<br>
+                        </p>
+                    @endforeach
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Portfolio</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Client</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('portfolios') }}">Portfolios</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Contacts</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Website Development</a>
-                        </li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Mobile Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">IOT Development (Internet Of
-                                Thing)</a>
-                        </li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">UX / UI Design</a></li>
+                        @foreach ($services as $service)
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">{{ $service->name }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -56,7 +53,8 @@
 
     <div class="container-fluid footer-bottom clearfix">
         <div class="copyright mx-auto">
-            &copy; 2023 Copyright <strong><span>Rivvana Inc.</span></strong> All Rights Reserved
+            &copy; {{ now()->year }}
+            Copyright <strong><span>Rivvana Inc</span></strong> All Rights Reserved
         </div>
     </div>
 </footer>

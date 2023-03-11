@@ -80,53 +80,29 @@
                     </p>
                 </div>
                 <div class="row">
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4><a href="">Website and App Development</a></h4>
-                            <p>Kami selalu berusaha memberikan layanan terbaik melalui kreativitas kreativitas yang
-                                menjadi keinginan anda.</p>
+                    @forelse($services as $service)
+                        <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-box text-center">
+                                <div class="icon"><img src="{{ asset('/storage/services/' . $service->icon) }}">
+                                </div>
+                                <h4><a href="">{{ $service->name }}</a></h4>
+                                <p>{!! $service->description !!}</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4><a href="">IOT Development (Internet Of Thing)</a></h4>
-                            <p>Kami selalu berusaha memberikan layanan terbaik melalui kreativitas kreativitas yang
-                                menjadi keinginan anda.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4><a href="">Mobile Development</a></h4>
-                            <p>Kami selalu berusaha memberikan layanan terbaik melalui kreativitas kreativitas yang
-                                menjadi keinginan anda.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                        data-aos-delay="400">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-layer"></i></div>
-                            <h4><a href="">UX / UI Design</a></h4>
-                            <p>Kami selalu berusaha memberikan layanan terbaik melalui kreativitas kreativitas yang
-                                menjadi keinginan anda.</p>
-                        </div>
-                    </div>
-
+                    @empty
+                        <h2 class="text-center">Data Service Belum Tersedia</h2>
+                    @endforelse
                 </div>
-
             </div>
-        </section><!-- End Services Section -->
+        </section>
+        <!-- End Services Section -->
 
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients">
             <div class="container">
+                <div class="section-title">
+                    <h2>Our Client</h2>
+                </div>
                 <div class="row" data-aos="zoom-in">
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
                         <img src="{{ asset('landing/img/clients/kemenag.png') }}" class="img-fluid" alt="">
@@ -148,27 +124,6 @@
         </section>
         <!-- End Cliens Section -->
 
-        <!-- ======= Caption Section ======= -->
-        <!-- <section id="caption" class="caption">
-                            <div class="container" data-aos="zoom-in">
-                                <div class="row">
-                                    <div class="col-lg-9 text-center text-lg-start">
-                                        <p> Kami adalah perusahaan yang bergerak di pengembangan teknologi perangkat lunak dan perangkat
-                                            keras. Kami akan berusaha memberikan kemudahan dengan mewujudkan impian dan ide-ide anda.
-                                        </p>
-                                        <h3>Rivvana Inc.</h3>
-                                    </div>
-                                    <div class="col-lg-3 caption-img-container text-center">
-                                        <img src="assets/img/caption-img.png"
-                                            class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
-                                            alt="">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </section> -->
-        <!-- End Caption Section -->
-
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
             <div class="container" data-aos="fade-up">
@@ -178,39 +133,24 @@
                         yang pernah kami kerjakan.</p>
                 </div>
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="{{ asset('landing/img/portfolio/1.png') }}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <a class="nav-link scrollto" href="portfolio-details.html">
-                                    <h4>Tes Doang</h4>
-                                </a>
+                    @forelse($portfolios as $portfolio)
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <div class="portfolio-wrap">
+                                <img src="{{ asset('/storage/portfolios/' . $portfolio->slider1) }}" class="img-fluid"
+                                    alt="">
+                                <div class="portfolio-info">
+                                    <a class="nav-link scrollto" href="{{ route('details', $portfolio->slug) }}">
+                                        <h4>{{ $portfolio->name }}</h4>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="{{ asset('landing/img/portfolio/2.png') }}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <a class="nav-link scrollto" href="portfolio-details.html">
-                                    <h4>Tes Doang 2</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="{{ asset('landing/img/portfolio/3.png') }}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <a class="nav-link scrollto" href="portfolio-details.html">
-                                    <h4>Tes Doang 3</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <h2 class="text-center">Portfolio Belum Tersedia</h2>
+                    @endforelse
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a href="#about" class="btn-more scrollto">Selengkapnya
+                    <a href="{{ route('portfolios') }}" class="btn-more scrollto">Lihat Lainnya
                     </a>
                 </div>
             </div>

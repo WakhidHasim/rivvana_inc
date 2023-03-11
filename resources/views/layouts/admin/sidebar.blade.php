@@ -4,14 +4,13 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="{{ asset('admin/assets/img/profile.jpg') }}" alt="..."
-                        class="avatar-img rounded-circle">
+                    <img src="{{ asset('admin/img/profile.jpg') }}" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            Hizrian
-                            <span class="user-level">Administrator</span>
+                            {{ auth()->user()->name }}
+                            <span class="user-level">{{ auth()->user()->email }}</span>
                             <span class="caret"></span>
                         </span>
                     </a>
@@ -20,7 +19,7 @@
                     <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#profile">
+                                <a href="{{ route('profiles.index') }}">
                                     <span class="link-collapse">My Profile</span>
                                 </a>
                             </li>
@@ -37,25 +36,17 @@
                 </li>
             </ul>
             <ul class="nav nav-primary">
-                <li class="nav-item {{ request()->is('admin/services') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->is('admin/services*') ? 'active' : '' }}">
                     <a href="{{ route('services.index') }}">
-                        <i class="fas fa-home"></i>
+                        <i class="fas far fa-handshake"></i>
                         <p>Services</p>
                     </a>
                 </li>
             </ul>
             <ul class="nav nav-primary">
-                <li class="nav-item {{ request()->is('admin/categories') ? 'active' : '' }}">
-                    <a href="{{ route('categories.index') }}">
-                        <i class="fas fa-home"></i>
-                        <p>Categories</p>
-                    </a>
-                </li>
-            </ul>
-            <ul class="nav nav-primary">
-                <li class="nav-item {{ request()->is('admin/portfolios') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->is('admin/portfolios*') ? 'active' : '' }}">
                     <a href="{{ route('portfolios.index') }}">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-folder-open"></i>
                         <p>Portfolios</p>
                     </a>
                 </li>

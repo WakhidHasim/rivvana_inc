@@ -1,8 +1,8 @@
 <div class="main-header">
     <!-- Logo Header -->
-    <div class="logo-header" data-background-color="blue">
+    <div class="logo-header" data-background-color="dark">
         <a href="{{ route('dashboard') }}" class="logo">
-            <img src="{{ asset('admin/assets/img/logo.svg') }}" alt="navbar brand" class="navbar-brand">
+            <img src="{{ asset('landing/img/logo.png') }}" alt="navbar brand" class="navbar-brand" width="125px">
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
             data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
     <!-- End Logo Header -->
 
     <!-- Navbar Header -->
-    <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+    <nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">
         <div class="container-fluid">
             <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                 <li class="nav-item toggle-nav-search hidden-caret">
@@ -32,7 +32,7 @@
                 <li class="nav-item dropdown hidden-caret">
                     <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                         <div class="avatar-sm">
-                            <img src="{{ asset('admin/assets/img/profile.jpg') }}" alt="..."
+                            <img src="{{ asset('admin/img/profile.jpg') }}" alt="..."
                                 class="avatar-img rounded-circle">
                         </div>
                     </a>
@@ -40,12 +40,15 @@
                         <div class="dropdown-user-scroll scrollbar-outer">
                             <li>
                                 <div class="user-box">
-                                    <div class="avatar-lg"><img src="{{ asset('admin/assets/img/profile.jpg') }}"
+                                    <div class="avatar-lg"><img src="{{ asset('admin/img/profile.jpg') }}"
                                             alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
-                                        <h4>Hizrian</h4>
-                                        <p class="text-muted">hello@example.com</p><a href="profile.html"
-                                            class="btn btn-xs btn-danger btn-sm">Logout</a>
+                                        <h4>{{ auth()->user()->name }}</h4>
+                                        <p class="text-muted">{{ auth()->user()->email }}</p>
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-xs btn-danger btn-sm">Logout</button>
+                                        </form>
                                     </div>
                                 </div>
                             </li>

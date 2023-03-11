@@ -9,7 +9,7 @@
                         href="{{ route('home') }}">Home</a></li>
                 <li><a class="nav-link scrollto {{ request()->is('about') ? 'active' : '' }}"
                         href="{{ route('about') }}">About</a></li>
-                <li><a class="nav-link scrollto {{ request()->is('portfolios') ? 'active' : '' }}"
+                <li><a class="nav-link scrollto {{ request()->is('portfolios*') ? 'active' : '' }}"
                         href="{{ route('portfolios') }}">Portfolio</a></li>
                 <li><a class="nav-link scrollto {{ request()->is('contact') ? 'active' : '' }}"
                         href="{{ route('contact') }}">Contact</a></li>

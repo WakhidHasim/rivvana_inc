@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function __invoke()
     {
-        return view('pages.admin.dashboard', [
+        return view('pages.admin.dashboard.index', [
             'portfolios' => Portfolio::count(),
             'services' => Service::count()
         ]);

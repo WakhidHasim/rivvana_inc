@@ -3,80 +3,88 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\ServiceRequest;
+use App\Models\Service;
+use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Portfolio::orderBy('id', 'DESC')->get();
+        $services = Service::orderBy('id', 'DESC')->get();
 
-        return view('pages.admin.service', compact('services'));
+        return view('pages.admin.service.index', compact('services'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('pages.admin.service.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(ServiceRequest $request)
     {
-        //
+        $icon = $request->file('icon');
+        $icon->storeAs('public/services', $icon->hashName());
+
+        Service::create([
+            'name'     => $request->name,
+            'icon'     => $icon->hashName(),
+            'description'   => $request->description
+        ]);
+
+        return redirect()->route('services.index')->with(['success' => 'Service data added successfully!']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $service = Service::findOrFail($id);
+
+        return view('pages.admin.service.edit', [
+            'service' => $service
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(ServiceRequest $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $service = Service::findOrFail($id);
+
+        if ($request->hasFile('icon')) {
+
+            $icon = $request->file('icon');
+            $icon->storeAs('public/services', $icon->hashName());
+
+            Storage::delete('public/services/' . $service->icon);
+
+            $service->update([
+                'name'     => $data['name'],
+                'icon'     => $icon->hashName(),
+                'description'   => $data['description']
+            ]);
+        } else {
+            $service->update([
+                'name'     => $data['name'],
+                'description'   => $data['description']
+            ]);
+        }
+
+        return redirect()->route('services.index')->with(['success' => 'Service Data successfully updated!']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $service = Service::findOrFail($id);
+
+        Storage::delete('public/services/' . $service->icon);
+
+        $service->delete();
+
+        return redirect()->route('services.index')->with(['success' => 'Service data successfully deleted!']);
     }
 }
